@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_own_app/pages/navpages/home_page.dart';
+import 'package:my_own_app/pages/navpages/main_page.dart';
 import 'package:my_own_app/widgets/app_text.dart';
 import 'package:my_own_app/widgets/style.dart';
 
@@ -54,7 +54,7 @@ class _DetailPageState extends State<DetailPage> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomePage()));
+                                      builder: (context) => MainPage()));
                             },
                           ),
                         ),

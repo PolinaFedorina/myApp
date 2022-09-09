@@ -69,7 +69,7 @@ class _CarouselLoadingState extends State<CarouselLoading> {
         width: isSelected ? 8 : 5,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isSelected ? primary : white,
+          color: isSelected ? primary : grey,
         ),
       ),
     );

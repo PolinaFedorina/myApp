@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_own_app/pages/detailpage.dart';
 import 'package:my_own_app/widgets/cart_home_page.dart';
 import 'package:my_own_app/widgets/circle_indicator.dart';
 import 'package:my_own_app/widgets/style.dart';
@@ -13,8 +14,8 @@ class TapBarWidget extends StatefulWidget {
 class _TapBarWidgetState extends State<TapBarWidget>
     with TickerProviderStateMixin {
   List<String> image = [
-    "../asset/images/shlapawom.jpg",
     "../asset/images/winter-boots.png",
+    "../asset/images/shlapawom.jpg",
     "../asset/images/percatki.jpg",
   ];
   @override
@@ -57,24 +58,30 @@ class _TapBarWidgetState extends State<TapBarWidget>
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.only(
-                      right: 15,
-                      top: 10,
-                    ),
-                    width: 170,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: white,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          image[0],
-                        ),
-                        fit: BoxFit.cover,
+                  return GestureDetector(
+                    child: Container(
+                      margin: const EdgeInsets.only(
+                        right: 15,
+                        top: 10,
                       ),
+                      width: 170,
+                      height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: white,
+                        image: DecorationImage(
+                          image: AssetImage(
+                            image[0],
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: CartHome(),
                     ),
-                    child: CartHome(),
+                    onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => DetailPage()));
+                  }
                   );
                 },
               ),

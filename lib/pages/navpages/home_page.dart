@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:my_own_app/const/AppColors.dart';
+import 'package:my_own_app/pages/navpages/drawer.dart';
 import 'package:my_own_app/widgets/app_large_text.dart';
 import 'package:my_own_app/widgets/app_text.dart';
 import 'package:my_own_app/widgets/baner_main.dart';
@@ -23,33 +24,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.buttonBackground,
+       drawer: Theme(
+           data: Theme.of(context).copyWith(
+                 canvasColor: white.withOpacity(0.8),),
+        child: DrawerWidget(),
+       ),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(130, 130, 130, 1),
+        elevation: 1,
+        title: Center(
+          child: SvgPicture.asset("../asset/svg/LogoSvgOld.svg",height: 60,)),
+            ),
       body: Column(children: [
-        Container(
-          padding: const EdgeInsets.only(top: 20, left: 20),
-          child: Row(
-            children: [
-              Icon(
-                Icons.menu,
-                size: 30,
-                color: Colors.black54,
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(),
-              ),
-              Container(
-                margin: EdgeInsets.only(right: 20),
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("../asset/images/znak.PNG"))),
-              ),
-            ],
-          ),
-        ),
         SizedBox(
-          height: 25,
+          height: 5,
         ),
         Container(
           width: 370,
@@ -101,11 +89,12 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 20,
               ),
+              //baner dobavit Knopku
               CarouselLoading(),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
-              //tabbar
+              //tabbar sdelat ctoby foto menyalis
               TapBarWidget(),
               SizedBox(
                 height: 20,

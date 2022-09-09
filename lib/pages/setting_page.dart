@@ -64,7 +64,7 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           buildAccountOptionRow(context, "Поменять пароль"),
           buildAccountOptionRow(context, "Настройка содержимого"),
-          buildAccountOptionRow(context, "Социальное обеспечение"),
+          buildAccountOptionRow(context, "Выбрать режим"),
           buildAccountOptionRow(context, "Выбрать язык"),
           buildAccountOptionRow(context, "Конфиденциальность и безопасность"),
           SizedBox(
