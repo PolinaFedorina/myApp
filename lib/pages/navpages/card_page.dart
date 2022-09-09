@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_own_app/const/AppColors.dart';
+import 'package:my_own_app/pages/navpages/home_page.dart';
+import 'package:my_own_app/pages/navpages/main_page.dart';
 import 'package:my_own_app/widgets/app_large_text.dart';
 import 'package:my_own_app/widgets/app_text.dart';
 import 'package:my_own_app/widgets/buy_cart.dart';
+import 'package:my_own_app/widgets/style.dart';
 
 class MyCardPage extends StatelessWidget {
   const MyCardPage({Key? key}) : super(key: key);
@@ -21,29 +25,36 @@ class MyCardPage extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   left: 20,
                 ),
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.textColor1,
-                  ),
-                  child: IconButton(
-                    alignment: Alignment.center,
-                    icon: Icon(
-                      Icons.keyboard_arrow_left,
-                      color: AppColors.bigTextColor,
-                      size: 26,
+                child: GestureDetector(
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColors.textColor1,
+                      ),
+                      child: IconButton(
+                        alignment: Alignment.center,
+                        icon: SvgPicture.asset(
+              "../asset/svg/arrowback.svg",
+              color: white, height: 20,width: 20,
+            ),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => MainPage()));
+                        },
+                      ),
                     ),
-                    onPressed: () {},
-                  ),
-                ),
+                   onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    }), 
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 40.0),
                 child: AppLargeText(
                   text: "Корзина товаров",
-                  color: AppColors.textColor1,
+                  color: AppColors.textColor1, size: 22,
                 ),
               ),
             ],

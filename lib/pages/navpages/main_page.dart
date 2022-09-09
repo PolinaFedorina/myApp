@@ -4,6 +4,8 @@ import 'package:my_own_app/pages/navpages/categories_page.dart';
 import 'package:my_own_app/pages/navpages/favorite_things_page.dart';
 import 'package:my_own_app/pages/navpages/home_page.dart';
 import 'package:my_own_app/pages/navpages/profile_page.dart';
+import 'package:my_own_app/widgets/style.dart';
+
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -39,10 +41,10 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.white,
         onTap: onTap,
           currentIndex: currentIndex,
-          selectedItemColor: Colors.black54,
+          selectedItemColor: primary,
           unselectedItemColor: Colors.grey.withOpacity(0.5),
           showUnselectedLabels: false,
-          showSelectedLabels: false,
+          showSelectedLabels: true,
           elevation: 0,
           items: [
             BottomNavigationBarItem(

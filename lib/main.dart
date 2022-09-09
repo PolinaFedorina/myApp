@@ -6,10 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:my_own_app/const/AppColors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:carousel_slider/carousel_controller.dart';
+import 'package:my_own_app/pages/detailpage.dart';
 import 'package:my_own_app/pages/navpages/card_page.dart';
 import 'package:my_own_app/pages/navpages/main_page.dart';
+import 'package:my_own_app/pages/navpages/profile_page.dart';
 import 'package:my_own_app/pages/navpages/welcome_page.dart';
+import 'package:my_own_app/pages/setting_page.dart';
 import 'package:my_own_app/widgets/baner_main.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -23,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: WelcomePage(),
     );
   }
 }

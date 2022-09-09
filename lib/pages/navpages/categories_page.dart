@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_own_app/const/AppColors.dart';
+import 'package:my_own_app/pages/navpages/home_page.dart';
+import 'package:my_own_app/pages/navpages/main_page.dart';
 import 'package:my_own_app/widgets/app_large_text.dart';
 import 'package:my_own_app/widgets/app_text.dart';
 import 'package:my_own_app/widgets/buy_cart.dart';
 import 'package:my_own_app/widgets/categories_card.dart';
+import 'package:my_own_app/widgets/style.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({Key? key}) : super(key: key);
@@ -31,12 +35,14 @@ class CategoriesPage extends StatelessWidget {
                   ),
                   child: IconButton(
                     alignment: Alignment.center,
-                    icon: Icon(
-                      Icons.keyboard_arrow_left,
-                      color: AppColors.bigTextColor,
-                      size: 26,
-                    ),
-                    onPressed: () {},
+                    icon: SvgPicture.asset(
+              "../asset/svg/arrowback.svg",
+              color: white, height: 20,width: 20,
+            ),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => MainPage()));
+                      },
                   ),
                 ),
               ),
@@ -44,7 +50,7 @@ class CategoriesPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 40.0),
                 child: AppLargeText(
                   text: "Категории товаров",
-                  color: AppColors.textColor1,
+                  color: AppColors.textColor1,size: 22,
                 ),
               ),
             ],
@@ -66,7 +72,7 @@ class CategoriesPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                ],
+              ],
             ),
           ),
           Container(
@@ -106,7 +112,7 @@ class CategoriesPage extends StatelessWidget {
               ],
             ),
           ),
-          ]),
+        ]),
       ),
     );
   }
